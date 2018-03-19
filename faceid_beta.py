@@ -12,16 +12,14 @@ Made by [Norman Di Palo](https://medium.com/@normandipalo), March 2018.
 # Let's start by downloading the dataset.
 """
 
-!rm -r faceid_train
-!rm -r faceid_val
 
-!ls
 
-!mkdir faceid_train
-!mkdir faceid_val
+import os
+
+os.mkdir("faceid_train")
+os.mkdir("faceid_val")
 
 # https://keras.io/
-!pip install -U keras
 import keras
 
 link_list=["http://vap.aau.dk/wp-content/uploads/VAPRBGD/(2012-05-16)(151751).zip", "http://vap.aau.dk/wp-content/uploads/VAPRBGD/(2012-05-16)(153054).zip", "http://vap.aau.dk/wp-content/uploads/VAPRBGD/(2012-05-16)(154211).zip", "http://vap.aau.dk/wp-content/uploads/VAPRBGD/(2012-05-16)(160440).zip", "http://vap.aau.dk/wp-content/uploads/VAPRBGD/(2012-05-16)(160931).zip", "http://vap.aau.dk/wp-content/uploads/VAPRBGD/(2012-05-16)(161342).zip", "http://vap.aau.dk/wp-content/uploads/VAPRBGD/(2012-05-16)(163349).zip", "http://vap.aau.dk/wp-content/uploads/VAPRBGD/(2012-05-16)(164248).zip", "http://vap.aau.dk/wp-content/uploads/VAPRBGD/(2012-05-17)(141550).zip", \
@@ -500,7 +498,6 @@ from google.colab import files
 
 # Install the PyDrive wrapper & import libraries.
 # This only needs to be done once in a notebook.
-!pip install -U -q PyDrive
 from pydrive.auth import GoogleAuth
 from pydrive.drive import GoogleDrive
 from google.colab import auth
@@ -521,7 +518,6 @@ print('Uploaded file with ID {}'.format(uploaded.get('id')))
 
 # Install the PyDrive wrapper & import libraries.
 # This only needs to be done once per notebook.
-!pip install -U -q PyDrive
 from pydrive.auth import GoogleAuth
 from pydrive.drive import GoogleDrive
 from google.colab import auth
