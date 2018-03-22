@@ -483,7 +483,7 @@ outputs = model_final.fit_generator(gen, steps_per_epoch=30, epochs=50, validati
 """# Some model tests."""
 
 cop = create_couple("faceid_val/")
-model_final.evaluate([cop[0].reshape((1,200,200,1)), cop[1].reshape((1,200,200,1))], np.array([0.]))
+model_final.evaluate([cop[0].reshape((1,200,200,4)), cop[1].reshape((1,200,200,4))], np.array([0.]))
 
 cop = create_wrong_rgbd("faceid_val/")
 model_final.predict([cop[0].reshape((1,200,200,4)), cop[1].reshape((1,200,200,4))])
@@ -666,4 +666,3 @@ file1 = ('faceid_train/(2012-05-16)(154211)/011_1_d.dat')
 inp2 = create_input_rgbd(file1)
 
 model_final.predict([inp1, inp2])
-
